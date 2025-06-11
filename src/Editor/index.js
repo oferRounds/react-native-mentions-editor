@@ -29,7 +29,8 @@ export class Editor extends React.Component {
     renderMentionList: PropTypes.func,
     placeMentionListOnBottom: PropTypes.bool,
     inputExtraHeight: PropTypes.number,
-    autoFocus: PropTypes.bool
+    autoFocus: PropTypes.bool,
+    selectionColor: PropTypes.object
   };
 
   constructor(props) {
@@ -588,7 +589,7 @@ export class Editor extends React.Component {
                 value={null}
                 onBlur={props.toggleEditor}
                 onChangeText={this.onChange}
-                selectionColor={"#000"}
+                selectionColor={props.selectionColor ?? "#000"}
                 onSelectionChange={this.handleSelectionChange}
                 placeholder={state.placeholder}
                 placeholderTextColor = { props.placeholderTextColor}
